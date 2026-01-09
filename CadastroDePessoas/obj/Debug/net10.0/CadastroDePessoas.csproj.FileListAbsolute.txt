@@ -1,0 +1,14 @@
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CadastroDePessoas\bin\Debug\net10.0\CadastroDePessoas.exe
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CadastroDePessoas\bin\Debug\net10.0\CadastroDePessoas.deps.json
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CadastroDePessoas\bin\Debug\net10.0\CadastroDePessoas.runtimeconfig.json
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CadastroDePessoas\bin\Debug\net10.0\CadastroDePessoas.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CadastroDePessoas\bin\Debug\net10.0\CadastroDePessoas.pdb
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CadastroDePessoas\obj\Debug\net10.0\CadastroDePessoas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CadastroDePessoas\obj\Debug\net10.0\CadastroDePessoas.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CadastroDePessoas\obj\Debug\net10.0\CadastroDePessoas.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CadastroDePessoas\obj\Debug\net10.0\CadastroDePessoas.csproj.CoreCompileInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CadastroDePessoas\obj\Debug\net10.0\CadastroDePessoas.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CadastroDePessoas\obj\Debug\net10.0\refint\CadastroDePessoas.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CadastroDePessoas\obj\Debug\net10.0\CadastroDePessoas.pdb
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CadastroDePessoas\obj\Debug\net10.0\CadastroDePessoas.genruntimeconfig.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CadastroDePessoas\obj\Debug\net10.0\ref\CadastroDePessoas.dll

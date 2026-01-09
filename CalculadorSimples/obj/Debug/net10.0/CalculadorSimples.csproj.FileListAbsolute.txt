@@ -1,0 +1,14 @@
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CalculadorSimples\bin\Debug\net10.0\CalculadorSimples.exe
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CalculadorSimples\bin\Debug\net10.0\CalculadorSimples.deps.json
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CalculadorSimples\bin\Debug\net10.0\CalculadorSimples.runtimeconfig.json
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CalculadorSimples\bin\Debug\net10.0\CalculadorSimples.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CalculadorSimples\bin\Debug\net10.0\CalculadorSimples.pdb
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CalculadorSimples\obj\Debug\net10.0\CalculadorSimples.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CalculadorSimples\obj\Debug\net10.0\CalculadorSimples.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CalculadorSimples\obj\Debug\net10.0\CalculadorSimples.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CalculadorSimples\obj\Debug\net10.0\CalculadorSimples.csproj.CoreCompileInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CalculadorSimples\obj\Debug\net10.0\CalculadorSimples.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CalculadorSimples\obj\Debug\net10.0\refint\CalculadorSimples.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CalculadorSimples\obj\Debug\net10.0\CalculadorSimples.pdb
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CalculadorSimples\obj\Debug\net10.0\CalculadorSimples.genruntimeconfig.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\CalculadorSimples\obj\Debug\net10.0\ref\CalculadorSimples.dll

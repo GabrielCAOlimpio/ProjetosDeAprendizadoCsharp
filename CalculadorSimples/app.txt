@@ -1,0 +1,5 @@
+/// <summary>
+/// Uma simples calculadora desenvolvida para revisar conceitos de C#.
+/// Este projeto implementa operações básicas de cálculo com o objetivo de praticar
+/// e consolidar conhecimentos fundamentais da linguagem C#.
+/// </summary>L
