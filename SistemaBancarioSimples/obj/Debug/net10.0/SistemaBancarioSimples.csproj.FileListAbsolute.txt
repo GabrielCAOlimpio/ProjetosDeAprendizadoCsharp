@@ -1,0 +1,15 @@
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\bin\Debug\net10.0\SistemaBancarioSimples.exe
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\bin\Debug\net10.0\SistemaBancarioSimples.deps.json
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\bin\Debug\net10.0\SistemaBancarioSimples.runtimeconfig.json
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\bin\Debug\net10.0\SistemaBancarioSimples.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\bin\Debug\net10.0\SistemaBancarioSimples.pdb
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\obj\Debug\net10.0\SistemaBancarioSimples.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\obj\Debug\net10.0\SistemaBancarioSimples.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\obj\Debug\net10.0\SistemaBancarioSimples.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\obj\Debug\net10.0\SistemaBancarioSimples.csproj.CoreCompileInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\obj\Debug\net10.0\SistemaBancarioSimples.sourcelink.json
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\obj\Debug\net10.0\SistemaBancarioSimples.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\obj\Debug\net10.0\refint\SistemaBancarioSimples.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\obj\Debug\net10.0\SistemaBancarioSimples.pdb
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\obj\Debug\net10.0\SistemaBancarioSimples.genruntimeconfig.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaBancarioSimples\obj\Debug\net10.0\ref\SistemaBancarioSimples.dll
