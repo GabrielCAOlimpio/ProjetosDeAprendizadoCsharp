@@ -1,0 +1,15 @@
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\bin\Debug\net10.0\SistemaSimplesDeLogin.exe
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\bin\Debug\net10.0\SistemaSimplesDeLogin.deps.json
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\bin\Debug\net10.0\SistemaSimplesDeLogin.runtimeconfig.json
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\bin\Debug\net10.0\SistemaSimplesDeLogin.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\bin\Debug\net10.0\SistemaSimplesDeLogin.pdb
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\obj\Debug\net10.0\SistemaSimplesDeLogin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\obj\Debug\net10.0\SistemaSimplesDeLogin.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\obj\Debug\net10.0\SistemaSimplesDeLogin.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\obj\Debug\net10.0\SistemaSimplesDeLogin.csproj.CoreCompileInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\obj\Debug\net10.0\SistemaSimplesDeLogin.sourcelink.json
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\obj\Debug\net10.0\SistemaSimplesDeLogin.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\obj\Debug\net10.0\refint\SistemaSimplesDeLogin.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\obj\Debug\net10.0\SistemaSimplesDeLogin.pdb
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\obj\Debug\net10.0\SistemaSimplesDeLogin.genruntimeconfig.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaSimplesDeLogin\obj\Debug\net10.0\ref\SistemaSimplesDeLogin.dll
