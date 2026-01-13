@@ -1,0 +1,15 @@
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\bin\Debug\net10.0\SistemaDeAtendimento.exe
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\bin\Debug\net10.0\SistemaDeAtendimento.deps.json
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\bin\Debug\net10.0\SistemaDeAtendimento.runtimeconfig.json
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\bin\Debug\net10.0\SistemaDeAtendimento.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\bin\Debug\net10.0\SistemaDeAtendimento.pdb
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\obj\Debug\net10.0\SistemaDeAtendimento.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\obj\Debug\net10.0\SistemaDeAtendimento.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\obj\Debug\net10.0\SistemaDeAtendimento.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\obj\Debug\net10.0\SistemaDeAtendimento.csproj.CoreCompileInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\obj\Debug\net10.0\SistemaDeAtendimento.sourcelink.json
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\obj\Debug\net10.0\SistemaDeAtendimento.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\obj\Debug\net10.0\refint\SistemaDeAtendimento.dll
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\obj\Debug\net10.0\SistemaDeAtendimento.pdb
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\obj\Debug\net10.0\SistemaDeAtendimento.genruntimeconfig.cache
+C:\Users\gabri\OneDrive\Desktop\Programação\Projetos\BackEnd\SistemaDeAtendimento\obj\Debug\net10.0\ref\SistemaDeAtendimento.dll
