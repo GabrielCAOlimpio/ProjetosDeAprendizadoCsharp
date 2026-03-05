@@ -61,8 +61,6 @@ public class PostController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreatePost([FromBody] PostCreateInputDTO inputDTO)
     {
-        Console.WriteLine("---- Entrou no CreatePost ----");
-
         try
         {
             var newPost = new PostsRequestDTO
@@ -76,7 +74,7 @@ public class PostController : ControllerBase
         catch (ArgumentException ex) { return BadRequest(ex.Message); }
         catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
         catch (InvalidOperationException ex) { return BadRequest(ex.Message); }
-        catch (UnauthorizedAccessException ex) { return Forbid(ex.Message); }
+        catch (UnauthorizedAccessException ex) { return StatusCode(403, ex.Message); }
         catch (Exception) { return Problem("An error occurred, try again later."); }
     }
 
@@ -89,13 +87,12 @@ public class PostController : ControllerBase
         try
         {
             var currentUserId = GetCurrentUserId();
-
+            
+            var currentUserEmail = User.FindFirst(ClaimTypes.Email)?.Value;
 
             var existingPost = await _postService.GetPostByIdAsync(id);
-            
 
-            dynamic postVerification = existingPost; 
-            if (postVerification.UserId != currentUserId)
+            if (existingPost.User.Email != currentUserEmail)
                 throw new UnauthorizedAccessException("You do not have permission to edit this post.");
 
             var newPost = new PostsRequestDTO()
@@ -110,7 +107,7 @@ public class PostController : ControllerBase
         catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
         catch (ArgumentException ex) { return BadRequest(ex.Message); }
         catch (InvalidOperationException ex) { return BadRequest(ex.Message); }
-        catch (UnauthorizedAccessException ex) { return Forbid(ex.Message); }
+        catch (UnauthorizedAccessException ex) { return StatusCode(403, ex.Message); }
         catch (Exception) { return Problem("An error occurred, try again later."); }
     }
 
@@ -120,12 +117,11 @@ public class PostController : ControllerBase
     {
         try
         {
-            var currentUserId = GetCurrentUserId();
+            var currentUserEmail = User.FindFirst(ClaimTypes.Email)?.Value;
 
             var existingPost = await _postService.GetPostByIdAsync(id);
             
-            dynamic postVerification = existingPost;
-            if (postVerification.UserId != currentUserId)
+            if (existingPost.User.Email != currentUserEmail)
                 throw new UnauthorizedAccessException("You do not have permission to delete this post.");
 
             await _postService.DeletePostAsync(id);
@@ -134,8 +130,8 @@ public class PostController : ControllerBase
         catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
         catch (ArgumentException ex) { return BadRequest(ex.Message); }
         catch (InvalidOperationException ex) { return BadRequest(ex.Message); }
-        catch (UnauthorizedAccessException ex) { return Forbid(ex.Message); }
-        catch (Exception) { return Problem("An error occurred, try again later."); }
+        catch (UnauthorizedAccessException ex) { return StatusCode(403, ex.Message); }
+        catch (Exception ex) { return Problem(ex.Message); }
     }
 
     [Authorize]
@@ -151,7 +147,7 @@ public class PostController : ControllerBase
         catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
         catch (ArgumentException ex) { return BadRequest(ex.Message); }
         catch (InvalidOperationException ex) { return BadRequest(ex.Message); }
-        catch (UnauthorizedAccessException ex) { return Forbid(ex.Message); }
+        catch (UnauthorizedAccessException ex) { return StatusCode(403, ex.Message); }
         catch (Exception) { return Problem("An error occurred, try again later."); }
     }
 
@@ -168,7 +164,7 @@ public class PostController : ControllerBase
         catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
         catch (ArgumentException ex) { return BadRequest(ex.Message); }
         catch (InvalidOperationException ex) { return BadRequest(ex.Message); }
-        catch (UnauthorizedAccessException ex) { return Forbid(ex.Message); }
+        catch (UnauthorizedAccessException ex) { return StatusCode(403, ex.Message); }
         catch (Exception) { return Problem("An error occurred, try again later."); }
     }
     
@@ -190,7 +186,7 @@ public class PostController : ControllerBase
         catch (ArgumentException ex) { return BadRequest(ex.Message); }
         catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
         catch (InvalidOperationException ex) { return BadRequest(ex.Message); }
-        catch (UnauthorizedAccessException ex) { return Forbid(ex.Message); }
+        catch (UnauthorizedAccessException ex) { return StatusCode(403, ex.Message); }
         catch (Exception) { return Problem("An error occurred, try again later."); }
     } 
 }

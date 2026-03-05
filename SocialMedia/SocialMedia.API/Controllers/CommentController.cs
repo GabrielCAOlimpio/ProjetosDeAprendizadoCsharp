@@ -49,7 +49,7 @@ public class CommentController : ControllerBase
         }
         catch (InvalidOperationException ex) // Caso o serviço lance isso se o User não for o dono
         {
-            return Forbid(ex.Message);
+            return StatusCode(403, ex.Message); 
         }
         catch (Exception)
         {
