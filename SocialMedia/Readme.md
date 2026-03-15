@@ -55,7 +55,7 @@ Essa separação permite manter o código limpo, testável e preparado para evol
 Relacionamentos implementados:
 
 - **One-to-Many**
-- **Many-to-One**
+- **One-to-One**
 - **Many-to-Many**
 
 Entidades principais:
