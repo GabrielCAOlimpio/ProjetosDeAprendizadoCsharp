@@ -14,6 +14,8 @@ using SocialMedia.Infrastructure.Security.Auth;
 using System.IdentityModel.Tokens.Jwt;
 using Scalar.AspNetCore;
 using Asp.Versioning;
+using SocialMedia.API.Middleware;
+using SocialMedia.API.OpenApi;
 
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
@@ -26,47 +28,48 @@ builder.Services.AddDbContext<SocialMediaContext>(options =>
 // --- SEGURANÇA (JWT) ---
 var secretKey = builder.Configuration["JwtSettings:Secret"];
 if (string.IsNullOrEmpty(secretKey))
-{
-    throw new Exception("ERRO: Chave JWT não encontrada no appsettings.json!");
-}
+    throw new InvalidOperationException("Chave JWT não encontrada nas configurações.");
 
 var key = Encoding.ASCII.GetBytes(secretKey);
 
-builder.Services.AddAuthentication(x =>
+builder.Services.AddAuthentication(options =>
 {
-    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme    = JwtBearerDefaults.AuthenticationScheme;
 })
-.AddJwtBearer(x =>
+.AddJwtBearer(options =>
 {
-    x.TokenValidationParameters = new TokenValidationParameters
+    options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(key),
-        ValidateIssuer = false,
-        ValidateAudience = false,
-        ClockSkew = TimeSpan.Zero
+        IssuerSigningKey         = new SymmetricSecurityKey(key),
+        ValidateIssuer           = true,
+        ValidIssuer              = builder.Configuration["JwtSettings:Issuer"],
+        ValidateAudience         = true,
+        ValidAudience            = builder.Configuration["JwtSettings:Audience"],
+        ClockSkew                = TimeSpan.Zero
     };
 
-    // Logs de debug — pode remover depois que estiver funcionando
-    x.Events = new JwtBearerEvents
+#if DEBUG
+    options.Events = new JwtBearerEvents
     {
         OnAuthenticationFailed = ctx =>
         {
-            Console.WriteLine("❌ JWT FALHOU: " + ctx.Exception?.Message);
+            Console.WriteLine("[JWT] Falha: " + ctx.Exception?.Message);
             return Task.CompletedTask;
         },
         OnTokenValidated = ctx =>
         {
-            Console.WriteLine("✅ JWT VÁLIDO: " + ctx.Principal?.Identity?.Name);
+            Console.WriteLine("[JWT] Válido: " + ctx.Principal?.Identity?.Name);
             return Task.CompletedTask;
         },
         OnChallenge = ctx =>
         {
-            Console.WriteLine("🔒 CHALLENGE: " + ctx.Error + " | " + ctx.ErrorDescription);
+            Console.WriteLine("[JWT] Challenge: " + ctx.Error + " | " + ctx.ErrorDescription);
             return Task.CompletedTask;
         }
     };
+#endif
 });
 
 builder.Services.AddAuthorization();
@@ -85,38 +88,49 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 // --- VERSIONAMENTO ---
 builder.Services.AddApiVersioning(opt =>
 {
-    opt.DefaultApiVersion = new ApiVersion(1, 0);
+    opt.DefaultApiVersion                   = new ApiVersion(1, 0);
     opt.AssumeDefaultVersionWhenUnspecified = true;
-    opt.ReportApiVersions = true;
+    opt.ReportApiVersions                   = true;
 })
 .AddApiExplorer(opt =>
 {
-    opt.GroupNameFormat = "'v'VVV";
+    opt.GroupNameFormat           = "'v'VVV";
     opt.SubstituteApiVersionInUrl = true;
 });
 
 builder.Services.AddControllers();
 
-// --- SCALAR (substitui o Swagger) ---
-if (!builder.Environment.IsProduction())
+// --- OPENAPI / SCALAR ---
+builder.Services.AddOpenApi("v1", options =>
 {
-    builder.Services.AddOpenApi();
-}
+    options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
+});
 
 // -------------------------------------------------------
 
 var app = builder.Build();
 
+
+app.UseMiddleware<ExceptionHandler>();
+
 if (!app.Environment.IsProduction())
 {
-    app.MapOpenApi();
+    app.MapOpenApi("/openapi/{documentName}.json");
+
     app.MapScalarApiReference(options =>
     {
-        options.Title = "Social Media API";
-        options.Authentication = new ScalarAuthenticationOptions
+        options.Title               = "Social Media API";
+        options.OpenApiRoutePattern = "/openapi/{documentName}.json";
+        options.Authentication      = new ScalarAuthenticationOptions
         {
-            PreferredSecurityScheme = "Bearer"
+            PreferredSecuritySchemes = ["Bearer"]
         };
+    });
+
+    app.MapGet("/", (HttpContext context) =>
+    {
+        context.Response.Redirect("/scalar/v1");
+        return Task.CompletedTask;
     });
 }
 

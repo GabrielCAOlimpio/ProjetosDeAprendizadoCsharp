@@ -11,7 +11,7 @@ namespace SocialMedia.API.Controllers;
 
 [ApiController]
 [ApiVersion("1.0")]
-[Route("api/v1/posts")]
+[Route("api/v{version:apiVersion}/[controller]")]
 public class PostController : ControllerBase
 {
     private readonly IPostService _postService;
@@ -34,48 +34,28 @@ public class PostController : ControllerBase
     [HttpGet("{pageNumber}/{pageSize}")]
     public async Task<IActionResult> GetAllPosts([FromRoute] int pageNumber = 1, [FromRoute] int pageSize = 10)
     {
-        try
-        {
-            var posts = await _postService.GetAllPostsAsync(pageNumber, pageSize);
-            return Ok(posts);
-        }
-        catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
-        catch (ArgumentException ex) { return BadRequest(ex.Message); }
-        catch (Exception) { return Problem("An error occurred, try again later."); }
+        var posts = await _postService.GetAllPostsAsync(pageNumber, pageSize);
+        return Ok(posts);
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetPostById([FromRoute] int id)
     {
-        try
-        {
-            var post = await _postService.GetPostByIdAsync(id);
-            return Ok(post);
-        }
-        catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
-        catch (ArgumentException ex) { return BadRequest(ex.Message); }
-        catch (Exception) { return Problem("An error occurred, try again later."); }
+        var post = await _postService.GetPostByIdAsync(id);
+        return Ok(post);
     }
 
     [Authorize]
     [HttpPost]
     public async Task<IActionResult> CreatePost([FromBody] PostCreateInputDTO inputDTO)
     {
-        try
+        var newPost = new PostsRequestDTO
         {
-            var newPost = new PostsRequestDTO
-            {
-                Content = inputDTO.Content,
-                UserId = GetCurrentUserId()
-            };
-            await _postService.CreatePostAsync(newPost);
-            return Created();
-        }
-        catch (ArgumentException ex) { return BadRequest(ex.Message); }
-        catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
-        catch (InvalidOperationException ex) { return BadRequest(ex.Message); }
-        catch (UnauthorizedAccessException ex) { return StatusCode(403, ex.Message); }
-        catch (Exception) { return Problem("An error occurred, try again later."); }
+            Content = inputDTO.Content,
+            UserId = GetCurrentUserId()
+        };
+        await _postService.CreatePostAsync(newPost);
+        return Created();
     }
 
     [Authorize]
@@ -84,88 +64,56 @@ public class PostController : ControllerBase
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
-        try
+        var currentUserId = GetCurrentUserId();
+        
+        var currentUserEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+
+        var existingPost = await _postService.GetPostByIdAsync(id);
+
+        if (existingPost.User.Email != currentUserEmail)
+            throw new UnauthorizedAccessException("You do not have permission to edit this post.");
+
+        var newPost = new PostsRequestDTO()
         {
-            var currentUserId = GetCurrentUserId();
-            
-            var currentUserEmail = User.FindFirst(ClaimTypes.Email)?.Value;
-
-            var existingPost = await _postService.GetPostByIdAsync(id);
-
-            if (existingPost.User.Email != currentUserEmail)
-                throw new UnauthorizedAccessException("You do not have permission to edit this post.");
-
-            var newPost = new PostsRequestDTO()
-            {
-                Content = post.Content,
-                UserId = currentUserId
-            };
-            
-            await _postService.UpdatePostAsync(id, newPost);
-            return NoContent();
-        }
-        catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
-        catch (ArgumentException ex) { return BadRequest(ex.Message); }
-        catch (InvalidOperationException ex) { return BadRequest(ex.Message); }
-        catch (UnauthorizedAccessException ex) { return StatusCode(403, ex.Message); }
-        catch (Exception) { return Problem("An error occurred, try again later."); }
+            Content = post.Content,
+            UserId = currentUserId
+        };
+        
+        await _postService.UpdatePostAsync(id, newPost);
+        return NoContent();
     }
 
     [Authorize]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePost([FromRoute] int id)
     {
-        try
-        {
-            var currentUserEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+        var currentUserEmail = User.FindFirst(ClaimTypes.Email)?.Value;
 
-            var existingPost = await _postService.GetPostByIdAsync(id);
-            
-            if (existingPost.User.Email != currentUserEmail)
-                throw new UnauthorizedAccessException("You do not have permission to delete this post.");
+        var existingPost = await _postService.GetPostByIdAsync(id);
+        
+        if (existingPost.User.Email != currentUserEmail)
+            throw new UnauthorizedAccessException("You do not have permission to delete this post.");
 
-            await _postService.DeletePostAsync(id);
-            return NoContent();
-        }
-        catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
-        catch (ArgumentException ex) { return BadRequest(ex.Message); }
-        catch (InvalidOperationException ex) { return BadRequest(ex.Message); }
-        catch (UnauthorizedAccessException ex) { return StatusCode(403, ex.Message); }
-        catch (Exception ex) { return Problem(ex.Message); }
+        await _postService.DeletePostAsync(id);
+        return NoContent();
     }
 
     [Authorize]
     [HttpPost("{id}/like")]
     public async Task<IActionResult> LikePost([FromRoute] int id)
     {
-        try
-        {
-            var currentUserId = GetCurrentUserId();
-            await _postService.LikePostAsync(id, currentUserId);
-            return NoContent();
-        }
-        catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
-        catch (ArgumentException ex) { return BadRequest(ex.Message); }
-        catch (InvalidOperationException ex) { return BadRequest(ex.Message); }
-        catch (UnauthorizedAccessException ex) { return StatusCode(403, ex.Message); }
-        catch (Exception) { return Problem("An error occurred, try again later."); }
+        var currentUserId = GetCurrentUserId();
+        await _postService.LikePostAsync(id, currentUserId);
+        return NoContent();
     }
 
     [Authorize]
     [HttpDelete("{id}/like")]
     public async Task<IActionResult> UnlikePost([FromRoute] int id) 
     {
-        try
-        {
-            var currentUserId = GetCurrentUserId();
-            await _postService.UnlikePostAsync(id, currentUserId);
-            return NoContent();
-        }
-        catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
-        catch (ArgumentException ex) { return BadRequest(ex.Message); }
-        catch (InvalidOperationException ex) { return BadRequest(ex.Message); }
-        catch (UnauthorizedAccessException ex) { return StatusCode(403, ex.Message); }
-        catch (Exception) { return Problem("An error occurred, try again later."); }
+        var currentUserId = GetCurrentUserId();
+        await _postService.UnlikePostAsync(id, currentUserId);
+        return NoContent();
     }
     
 
@@ -175,18 +123,9 @@ public class PostController : ControllerBase
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
-        try
-        {
-
-            comment.UserId = GetCurrentUserId(); 
-            
-            await _commentService.AddCommentAsync(comment);
-            return Created();
-        }
-        catch (ArgumentException ex) { return BadRequest(ex.Message); }
-        catch (KeyNotFoundException ex) { return NotFound(ex.Message); }
-        catch (InvalidOperationException ex) { return BadRequest(ex.Message); }
-        catch (UnauthorizedAccessException ex) { return StatusCode(403, ex.Message); }
-        catch (Exception) { return Problem("An error occurred, try again later."); }
+        comment.UserId = GetCurrentUserId(); 
+        
+        await _commentService.AddCommentAsync(comment);
+        return Created();
     } 
 }

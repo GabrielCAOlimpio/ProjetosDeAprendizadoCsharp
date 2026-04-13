@@ -11,7 +11,7 @@ namespace SocialMedia.API.Controllers;
 
 [ApiController]
 [ApiVersion("1.0")]
-[Route("api/v1/comments")]
+[Route("api/v{version:apiVersion}/[controller]")]
 
 public class CommentController : ControllerBase
 {
@@ -32,28 +32,9 @@ public class CommentController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteComment([FromRoute] int id)
     {
-        try
-        {
-            var userId = GetCurrentUserId();
-            await _commentService.DeleteCommentAsync(id,userId); 
-            
-            return NoContent();
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(ex.Message);
-        }
-        catch (UnauthorizedAccessException ex)
-        {
-            return Unauthorized(ex.Message);
-        }
-        catch (InvalidOperationException ex) // Caso o serviço lance isso se o User não for o dono
-        {
-            return StatusCode(403, ex.Message); 
-        }
-        catch (Exception)
-        {
-            return Problem("An error occurred, try again later.");
-        }
+        var userId = GetCurrentUserId();
+        await _commentService.DeleteCommentAsync(id, userId); 
+        
+        return NoContent();
     }
 }
