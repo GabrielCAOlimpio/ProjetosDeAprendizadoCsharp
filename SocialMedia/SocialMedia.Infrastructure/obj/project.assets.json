@@ -4078,11 +4078,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj",
       "projectName": "SocialMedia.Infrastructure",
-      "projectPath": "c:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -4097,8 +4097,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "c:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {
-              "projectPath": "c:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj"
+            "C:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {
+              "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj"
             }
           }
         }

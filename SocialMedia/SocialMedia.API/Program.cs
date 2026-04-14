@@ -112,7 +112,6 @@ var app = builder.Build();
 
 
 app.UseMiddleware<ExceptionHandler>();
-app.UseMiddleware<ResumeMiddleware>();
 
 if (!app.Environment.IsProduction())
 {

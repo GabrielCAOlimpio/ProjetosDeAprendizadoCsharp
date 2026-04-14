@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {}
+    "C:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {}
   },
   "projects": {
-    "c:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {
+    "C:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj",
         "projectName": "SocialMedia.Domain",
-        "projectPath": "c:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj",
+        "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj",
         "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Domain\\obj\\",
+        "outputPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Programação\\Projetos\\BackEnd\\SocialMedia\\SocialMedia.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config"
