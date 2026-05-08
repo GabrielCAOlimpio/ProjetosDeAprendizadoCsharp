@@ -1,0 +1,117 @@
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Visual Studio
+.vs/
+.vscode/
+*.user
+*.userprefs
+*.suo
+*.sln.docstates
+
+# Build Results
+bin/
+obj/
+.vs/
+.vscode/
+dist/
+publish/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Entity Framework
+*.db
+*.sqlite
+*.sqlite3
+
+# Entity Framework Migrations
+**/Migrations/**
+
+# Runtime
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.suo
+*.sln.docstates
+.vscode/
+
+# Sensitive configuration files
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+launchSettings.json
+Properties/launchSettings.json
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Secrets
+secrets.json
+user-secrets.json
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+*.backup
+
+# Package manager
+package-lock.json
+yarn.lock
+node_modules/
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# User specific
+*.sln.iml
+
+# Build artifacts
+*.o
+*.so
+*.dylib
+
+# Database files
+*.mdf
+*.ldf
+*.ndf
+
+# Visual Studio cache/options directory
+.vs/
+
+# Rider IDE
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+*.iws
+
+# Resharper files
+_ReSharper*/
+*.resharper
+*.resharper.user
+
+# Test files
+TestResults/
+*.trx
+
+# Azure
+azure-pipelines.yml
+.funcignore
